@@ -50,10 +50,9 @@ The Workshop has 3 labs
 
 Before starting to the labs, we must complete the relevant development environment configuration. GitHub Codespaces is your best partner. Through GitHub Codespaces, we can access it across devices and under any browser. It is easier for us to complete open source project maintenance and learning. Through the study of Lab 0, you will learn how to build a Copilot application development environment based on GitHub Codespaces.
 
-Hour: 40 min - 60 min
+⏰ <u>Hour :</u> 40 min - 60 min
 
-Link: Click [this link](./labs/lab0/README.md)
-
+🔗 <u>Link :</u> Click [this link](./labs/lab0/README.md)
 
 
 **🧪 Lab 1 - Prototype** 
