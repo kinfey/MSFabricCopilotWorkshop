@@ -5,6 +5,8 @@
 With the arrival of a new AI era, multimodal models have human-like thinking. pass 
 Prompt guidance can be generated through these multi-modal models to construct different content. Microsoft Build 2023 Microsoft proposed the Copilot application technology stack based on Azure OpenAI Service, allowing individuals and enterprises to easily build interactive Copilot applications.
 
+![Copilot Stack](../../imgs/lab1/copilotstack.png)
+
 We hope that the multimodal model of Azure OpenAI Service has more knowledge, such as data in the enterprise, new knowledge, and time-sensitive news. Unfortunately our model training is based on constant time knowledge. We need to add our own data or new knowledge to the model, which is basically done by knowledge embedding in the industry。
 
 In Lab 1, we will extract the knowledge points of Microsoft Fabric based on Azure OpenAI Service and complete a basic prototype, hoping to give you some inspiration.Let's go 😏
