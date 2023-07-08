@@ -256,7 +256,7 @@ Please Click [notebook](../../code/lab1/prototype.ipynb)  to learn
 
 ## **🔁 Continue**
 
-After the prototype is successfully built, you will find that teaching AI professional knowledge is a very simple matter. Congratulations on becoming an AI mentor!
+After the prototype is successfully built, you will find that teaching AI professional knowledge is a very simple. Congratulations you are an AI mentor!
 
 
 ## **🪵 Resources**
