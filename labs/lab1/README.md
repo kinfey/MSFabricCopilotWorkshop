@@ -249,6 +249,8 @@ docker run -p 6333:6333 qdrant/qdrant
 
 ## **🎬 Let's Start**
 
+![prototype](../../imgs/lab1/ptshow.png)
+
 Please Click [notebook](../../code/lab1/prototype.ipynb)  to learn 
 
 
