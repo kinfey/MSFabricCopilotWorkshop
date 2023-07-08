@@ -249,6 +249,13 @@ docker run -p 6333:6333 qdrant/qdrant
 
 ## **🎬 Let's Start**
 
+Please Click [notebook](../../code/lab1/prototype.ipynb)  to learn 
+
+
+
+
+
+
 
 
 
