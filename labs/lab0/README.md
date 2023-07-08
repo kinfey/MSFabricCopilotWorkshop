@@ -125,7 +125,7 @@ Then restart your machine
 Congratulations 🎊🎊🎊! You have completed the construction of the most basic environment, and then go to Lab 1
 
 
-## **Resources**
+## **🪵 Resources**
 
 Know more about [GitHub Codespaces](https://docs.github.com/en/codespaces/overview)
 

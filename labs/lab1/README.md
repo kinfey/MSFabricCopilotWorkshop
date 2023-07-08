@@ -259,6 +259,17 @@ Please Click [notebook](../../code/lab1/prototype.ipynb)  to learn
 After the prototype is successfully built, you will find that teaching AI professional knowledge is a very simple matter. Congratulations on becoming an AI mentor!
 
 
+## **🪵 Resources**
+
+1. Learn [Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/overview)
+
+2. Learn [Semantic Kernel](https://learn.microsoft.com/en-us/semantic-kernel/overview/)
+
+3. Learn [Qdrant](https://qdrant.tech/documentation/)
+
+   
+
+
 
 
 
