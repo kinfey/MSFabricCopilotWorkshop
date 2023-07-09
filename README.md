@@ -1,5 +1,7 @@
 # **🫵 Building Microsoft Fabric Copilot App Workshop**
 
+***如果你希望使用中文的内容, 请点击该[链接](./README-ZH-CN.md)***
+
 ## **📡 What is Microsoft Fabric ?**
 
 ![Microsoft Fabric](./imgs/intro/fabric.png)
@@ -43,7 +45,7 @@ This is the architecture
 ## **🔥 About Workshop**
 
 
-The Workshop has 3 labs
+The Workshop has 4 labs
 
 
 **🧪 Lab 0 - Setting your GitHub Codespaces** 
