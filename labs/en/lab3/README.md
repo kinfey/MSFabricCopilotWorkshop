@@ -19,7 +19,7 @@ Power Virtual Agents lets you create powerful AI-powered chatbots for a range of
 
 2. Set Name and  language (Choose English)
 
-![pva2](../../imgs/lab3/step02.png)
+![pva2](../../../imgs/lab3/step02.png)
 
    Just a moment , you can go to your PVA application 
 
