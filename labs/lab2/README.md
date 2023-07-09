@@ -90,6 +90,53 @@ IKernel kernel = Kernel.Builder
 
 ```
 
+
+## **Azure Function**
+
+Azure Functions is a serverless solution that allows you to write less code, maintain less infrastructure, and save on costs. Instead of worrying about deploying and maintaining servers, the cloud infrastructure provides all the up-to-date resources needed to keep your applications running.
+
+As shown in the above architecture diagram, we use Serverless as the interactive API of Copilot
+
+***Let‘s go***
+
+1. Go to ./code/lab2/MSFabricBots
+
+2. Change MSFabricBots.Funcs/appsettings.json in your Codespaces
+
+```json
+
+{
+    "AzureOpenAI": {
+      "deployName": "Your GPT-3 ModelName",
+      "endpoint": "Your Azure Endpoint",
+      "apiKey": "Your Azure OpenAI Key",
+      "embeddingDeployName": "Your Embedding Endpoint",
+      "vectorDBEndpoint": "http://YourAKSEndPoint:6333",
+      "memoryCollectionName":"fbkb-concept"
+    }
+}
+
+```
+
+3. Open Terminal 
+
+
+```bash
+
+cd ./code/lab2/MSFabricBots/MSFabricBots.Funcs
+
+func host start
+
+```
+
+4. Open your GitHub Codepsaces Thunder Client Extension 
+
+![Run1](../../imgs/lab2/run1.png)
+
+
+
+
+
  
 
 

@@ -1,0 +1,10 @@
+Summarize the content and output it. Please filter out all HTML tags and markdown tags when summarizing the output in English, and the summation cannot exceed 200 characters, and if you encounter [product-name], it will be uniformly converted to Microsoft Fabric
+
+[INPUT]
+{{$input}}
+[END INPUT]
+
+
+[OUTPUT]
+{{$output}}
+[END OUTPUT]

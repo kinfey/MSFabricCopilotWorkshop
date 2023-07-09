@@ -1,0 +1,9 @@
+{
+    "schema": 1,
+    "type": "completion",
+    "description": "Translate KB Content",
+    "completion": {
+      "max_tokens": 2048,
+      "temperature": 0.4
+    }
+}

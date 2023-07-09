@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "type": "completion",
+  "description": "Get KB Content",
+  "completion": {
+    "max_tokens": 13000,
+    "temperature": 0.0
+  }
+}

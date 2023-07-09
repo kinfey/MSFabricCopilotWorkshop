@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "MSFabricBots_Funcs": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7255",
+      "launchBrowser": false
+    }
+  }
+}
