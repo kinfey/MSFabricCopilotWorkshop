@@ -50,7 +50,7 @@ The Workshop has 3 labs
 
 Before starting to the labs, we must complete the relevant development environment configuration. GitHub Codespaces is your best partner. Through GitHub Codespaces, we can access it across devices and under any browser. It is easier for us to complete open source project maintenance and learning. Through the study of Lab 0, you will learn how to build a Copilot application development environment based on GitHub Codespaces.
 
-⏰ *Hour : 40 min - 60 min*
+⏰ *Hour : 45 min - 60 min*
 
 🔗 *Link : Click [this link](./labs/lab0/README.md)*
 
@@ -60,7 +60,7 @@ Before starting to the labs, we must complete the relevant development environme
 How to import Microsoft Fabric documents based on Microsoft Learn into ChatGPT to build a Copilot application? We do prototyping with Semantic Kernel, Qdrant with .NET Polyglot Notebooks
 
 
-⏰ *Hour :  60 min - 90 min*
+⏰ *Hour :  45 min - 60 min*
 
 🔗 *Link :</u> Click [this link](./labs/lab1/README.md)*
 
@@ -70,13 +70,20 @@ How to import Microsoft Fabric documents based on Microsoft Learn into ChatGPT t
 In modern applications, we cannot do without cloud-native applications. In Lab 2, we enter to configure the backend for the Copilot application. We need to combine Azure Kubernetes Service and Azure Function on Azure to complete the use of the relevant backend
 
 
-⏰ *Hour :  60 min - 90 min*
+⏰ *Hour :  45 min - 60 min*
 
 🔗 *Link :</u> Click [this link](./labs/lab2/README.md)*
 
 
 
-**🧪 Lab 3 - Using Power Virtual Agent**
+**🧪 Lab 3 - Create Chatbot with Power Virtual Agent**
+
+Build Copilot's front-end interaction with low-code Power Virtual Agent and Power Automate
+
+
+⏰ *Hour :  45 min - 60 min*
+
+🔗 *Link :</u> Click [this link](./labs/lab3/README.md)*
 
 
 ## **🔥 Prerequirement**
