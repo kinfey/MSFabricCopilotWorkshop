@@ -67,6 +67,8 @@ How to import Microsoft Fabric documents based on Microsoft Learn into ChatGPT t
 
 **🧪 Lab 2 - Deploy to Cloud**
 
+In modern applications, we cannot do without cloud-native applications. In Lab 2, we enter to configure the backend for the Copilot application. We need to combine Azure Kubernetes Service and Azure Function on Azure to complete the use of the relevant backend
+
 
 ⏰ *Hour :  60 min - 90 min*
 
