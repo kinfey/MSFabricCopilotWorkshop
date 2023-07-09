@@ -11,13 +11,13 @@ In Copilot applications, we can fully integrate with cloud-native applications. 
 
 ![statck](../../imgs/intro/stack.png)
 
-## **Deploy Qdrant in Azure Kubernetes Service**
+## **☁️☁️ Deploy Qdrant in Azure Kubernetes Service**
 
-### **What is Azure Kubernetes Service**
+### **🌪️ What is Azure Kubernetes Service**
 
 Azure Kubernetes Service (AKS) simplifies deploying a managed Kubernetes cluster in Azure by offloading the operational overhead to Azure. As a hosted Kubernetes service, Azure handles critical tasks, like health monitoring and maintenance. When you create an AKS cluster, a control plane is automatically created and configured. This control plane is provided at no cost as a managed Azure resource abstracted from the user. You only pay for and manage the nodes attached to the AKS cluster.
 
-### **Deploy**
+### **🌪️ Deploy**
 
 ***Prerequirement***
 
@@ -28,7 +28,7 @@ Azure Kubernetes Service (AKS) simplifies deploying a managed Kubernetes cluster
 3. Apply [Azure](https://azure.com/free)  or [Azure For Student](https://aka.ms/studentgetazure)
 
 
-***Let's Go***
+***🏃‍♂️  Let's Go***
 
 1. Clone GitHub Repo git clone https://github.com/Azure-Samples/qdrant-azure.git
 
@@ -97,7 +97,7 @@ Azure Functions is a serverless solution that allows you to write less code, mai
 
 As shown in the above architecture diagram, we use Serverless as the interactive API of Copilot
 
-***Let‘s go***
+***🏃‍♂️ Let‘s go***
 
 1. Go to ./code/lab2/MSFabricBots
 
@@ -162,6 +162,21 @@ func azure functionapp publish lukaoaifunc --csharp
 
 
 ![run2](../../imgs/lab2/run2.png)
+
+
+## **🔁 Continue**
+
+We have created the vector database and API through cloud native technology. Congratulations, you have completed the Copilot backend-based operation through Lab 2. In our Lab 3, we start from the front end
+
+
+## **🪵 Resources**
+
+1. Learn [Azure Function Service](https://learn.microsoft.com/en-us/azure/azure-functions/)
+
+2. Learn [Azure Kubernetes Service](https://learn.microsoft.com/en-us/azure/aks/)
+
+
+
 
 
 
