@@ -52,7 +52,7 @@ Before starting to the labs, we must complete the relevant development environme
 
 ⏰ *Hour : 45 min - 60 min*
 
-🔗 *Link : Click [this link](./labs/lab0/README.md)*
+🔗 *Link : Click [this link](./labs/en/lab0/README.md)*
 
 
 **🧪 Lab 1 - Prototype** 
@@ -62,7 +62,7 @@ How to import Microsoft Fabric documents based on Microsoft Learn into ChatGPT t
 
 ⏰ *Hour :  45 min - 60 min*
 
-🔗 *Link :</u> Click [this link](./labs/lab1/README.md)*
+🔗 *Link :</u> Click [this link](./labs/en/lab1/README.md)*
 
 
 **🧪 Lab 2 - Deploy to Cloud**
@@ -72,7 +72,7 @@ In modern applications, we cannot do without cloud-native applications. In Lab 2
 
 ⏰ *Hour :  45 min - 60 min*
 
-🔗 *Link :</u> Click [this link](./labs/lab2/README.md)*
+🔗 *Link :</u> Click [this link](./labs/en/lab2/README.md)*
 
 
 
@@ -83,7 +83,7 @@ Build Copilot's front-end interaction with low-code Power Virtual Agent and Powe
 
 ⏰ *Hour :  45 min - 60 min*
 
-🔗 *Link :</u> Click [this link](./labs/lab3/README.md)*
+🔗 *Link :</u> Click [this link](./labs/en/lab3/README.md)*
 
 
 ## **🔥 Prerequirement**

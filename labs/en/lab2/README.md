@@ -9,7 +9,7 @@ Cloud native applications are built from the ground up—optimized for cloud sca
 In Copilot applications, we can fully integrate with cloud-native applications. In Lab 1, Qdrant is used locally in the form of containers, and we can deploy it in combination with Azure Kubernetes Service. For the interaction with the knowledge base, we can also publish it as a Serverless API through Azure Function.
 
 
-![statck](../../imgs/intro/stack.png)
+![statck](../../../imgs/intro/stack.png)
 
 ## **🛠️ Deploy Qdrant in Azure Kubernetes Service**
 
@@ -50,7 +50,7 @@ Azure Kubernetes Service (AKS) simplifies deploying a managed Kubernetes cluster
 
 4. Follow this to finish AKS settings
 
-![AKS](../../imgs/lab2/AKS.png)
+![AKS](../../../imgs/lab2/AKS.png)
 
 
 5. In Terminal
@@ -75,7 +75,7 @@ kubectl get services
 
 ```
 
-![AKS](../../imgs/lab2/qdrant.png)
+![AKS](../../../imgs/lab2/qdrant.png)
 
 7. The covered red part is the public address of our Qdrant on Azure. Congratulations, you have successfully deployed your Qdrant on Azure in the cloud. You can re-run the Notebook after modifying the Qdrant address connected to the Lab 1 Notebook Kernel
 
@@ -131,18 +131,18 @@ func host start
 
 4. Open your GitHub Codepsaces Thunder Client Extension 
 
-![Run1](../../imgs/lab2/run1.png)
+![Run1](../../../imgs/lab2/run1.png)
 
 
 5. In Azure Portal create Function App
 
 
-![func](../../imgs/lab2/func.png)
+![func](../../../imgs/lab2/func.png)
 
 6. Go to your Azure Function ， confirm your Configuration 
 
 
-![func1](../../imgs/lab2/func1.png)
+![func1](../../../imgs/lab2/func1.png)
 
 7. In Your GitHub Codespaces , go to terminal 
 
@@ -156,12 +156,12 @@ func azure functionapp publish lukaoaifunc --csharp
 
 ```
 
-![func2](../../imgs/lab2/func2.png)
+![func2](../../../imgs/lab2/func2.png)
 
 8. Check it in your GitHub Codespaces Thunder Client Extension
 
 
-![run2](../../imgs/lab2/run2.png)
+![run2](../../../imgs/lab2/run2.png)
 
 
 ## **🔁 Continue**

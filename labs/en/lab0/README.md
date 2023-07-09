@@ -19,29 +19,29 @@ Each codespace you create is hosted by GitHub in a Docker container, running on 
 2. Click on your Profile photo in the upper right corner of the portal, and select ‘Your codespaces’ from the expanded menu
 
 
-![Open codespaces](../../imgs/lab0/opencodespaces.png)
+![Open codespaces](../../../imgs/lab0/opencodespaces.png)
 
 3. Choose Blank template
 
 
-![Blank templates](../../imgs/lab0/codespacesblank.png)
+![Blank templates](../../../imgs/lab0/codespacesblank.png)
 
 4. Using 'Ctrl+Shift+P' ( Windows / Linux ) or 'Cmd+Shift+P' ( macOS) to choose ' Codespaces : Add Dev Containers Cogiguration Files ...'
 
 
-![Add Dev Containers](../../imgs/lab0/adddevcontainer.png)
+![Add Dev Containers](../../../imgs/lab0/adddevcontainer.png)
 
    Then choose 'Create a new configuration'
 
-![Add New Dev Containers](../../imgs/lab0/addnewdevcontainer.png)
+![Add New Dev Containers](../../../imgs/lab0/addnewdevcontainer.png)
 
 5. Set C# (.NET) devcontainers
    
-![Add dotNET Containers](../../imgs/lab0/codespacesdotnet.png)
+![Add dotNET Containers](../../../imgs/lab0/codespacesdotnet.png)
 
    Chooese 7.0 
    
-![Add dotNET 7 Containers](../../imgs/lab0/codespacesdotnet7.png)
+![Add dotNET 7 Containers](../../../imgs/lab0/codespacesdotnet7.png)
 
 
 
@@ -51,27 +51,27 @@ Each codespace you create is hosted by GitHub in a Docker container, running on 
 
 **.NET Extension Pack**
 
-![.NET Extension Pack](../../imgs/lab0/csextdotnet.png)
+![.NET Extension Pack](../../../imgs/lab0/csextdotnet.png)
 
 **Azure Tools**
 
-![Azure Tools](../../imgs/lab0/csextazure.png)
+![Azure Tools](../../../imgs/lab0/csextazure.png)
 
 **Azure Functions**
 
-![Azure Functions](../../imgs/lab0/csextfuns.png)
+![Azure Functions](../../../imgs/lab0/csextfuns.png)
 
 **Docker**
 
-![Docker Extensions](../../imgs/lab0/csextdocker.png)
+![Docker Extensions](../../../imgs/lab0/csextdocker.png)
 
 **Thunder Client**
 
-![Docker Extensions](../../imgs/lab0/csextthunder.png)
+![Docker Extensions](../../../imgs/lab0/csextthunder.png)
 
 **Polyglot Notebooks**
 
-![Polyglot Notebooks Extensions](../../imgs/lab0/csextnotebooks.png)
+![Polyglot Notebooks Extensions](../../../imgs/lab0/csextnotebooks.png)
 
 *Note:*  Please check your devcontainer.json 
 
@@ -105,20 +105,20 @@ Each codespace you create is hosted by GitHub in a Docker container, running on 
 
 8. Choose Rebuild your codespaces dev container
    
-![Rebuild](../../imgs/lab0/codespacesrebuild.png)
+![Rebuild](../../../imgs/lab0/codespacesrebuild.png)
 
 9. After Rebuild ,using 'Ctrl+Shift+P' ( Windows / Linux ) or 'Cmd+Shift+P' ( macOS) to choose ' Codespaces : Change Machine Type'
    
-![Change Machine Type](../../imgs/lab0/codespacesmt.png)
+![Change Machine Type](../../../imgs/lab0/codespacesmt.png)
 
 
 Then Choose '4 cores,8 GB RAM, 32 GB Storage'
    
-![Choose Device](../../imgs/lab0/codespacesmtdevice.png)
+![Choose Device](../../../imgs/lab0/codespacesmtdevice.png)
 
 Then restart your machine 
    
-![Restart](../../imgs/lab0/codespacesrestart.png)
+![Restart](../../../imgs/lab0/codespacesrestart.png)
 
 ## **🔁 Continue**
 

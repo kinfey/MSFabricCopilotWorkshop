@@ -5,7 +5,7 @@
 With the arrival of a new AI era, multimodal models have human-like thinking. pass 
 Prompt guidance can be generated through these multi-modal models to construct different content. Microsoft Build 2023 Microsoft proposed the Copilot application technology stack based on Azure OpenAI Service, allowing individuals and enterprises to easily build interactive Copilot applications.
 
-![Copilot Stack](../../imgs/lab1/copilotstack.png)
+![Copilot Stack](../../../imgs/lab1/copilotstack.png)
 
 We hope that the multimodal model of Azure OpenAI Service has more knowledge, such as data in the enterprise, new knowledge, and time-sensitive news. Unfortunately our model training is based on constant time knowledge. We need to add our own data or new knowledge to the model, which is basically done by knowledge embedding in the industry。
 
@@ -68,7 +68,7 @@ git clone https://github.com/MicrosoftDocs/fabric-docs.git
 
 1. In folder - code , use GitHub Codespaces to create prototype.ipynb file , Select Kernel '.NET Interactive'
 
-![Notebook](../../imgs/lab1/notebookstart.png)
+![Notebook](../../../imgs/lab1/notebookstart.png)
 
 *Note:*  If you haven't configured GitHub Codespaces please go back to [Lab 0](../lab0/README.md)
 
@@ -79,7 +79,7 @@ Before prototyping, we need to understand the unstructured data we download, whi
 
 We hope that every knowledge point about Microsoft Fabric can be mastered by the model on Azure OpenAI Service. But what to do with unstructured content is a key. We found some patterns in the markdown we downloaded. For example, there are files described in the file header (author, time, abstract, etc.), and knowledge points are represented by #, ##, ### in markdown format, or we can write promp in this way Let the large model in Azure OpenAI Service help us extract relevant details
 
-![Notebook](../../imgs/lab1/kb.png)
+![Notebook](../../../imgs/lab1/kb.png)
 
 
 At this time, we can easily define some data rules, or we need a JSON to save these extracted knowledge points ， like:
@@ -91,7 +91,7 @@ At this time, we can easily define some data rules, or we need a JSON to save th
 
 Azure OpenAI Service integrates different OpenAI large models, and now GA has GPT-3, ChatGPT, Codex, DALL-E, which are integrated with Azure's enterprise functions. Let enterprises be safer and more reliable in the process of using large models
 
-![Notebook](../../imgs/lab1/aoai.png)
+![Notebook](../../../imgs/lab1/aoai.png)
 
 If you want to use Azure OpenAI Service, in addition to needing an Azure account, also need to apply. This experiment requires gpt-35-turbo-16k and text-embedding-ada-002, so you only need to click [this link](https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR7en2Ais5pxKtso_Pz4b1_xUOFA5Qk1UWDRBMjg0WFhPMkIzTzhKQ1dWNyQlQCN0PWcu) to apply (about 1-2 working days passed 🤗🤗🤗), as for GPT-4, it is relatively difficult to apply 😥😥😥😥.
 
@@ -102,7 +102,7 @@ If you want to know how to use the model on Azure OpenAI Service please use this
 
 Before this step, we have completed the download and data relationship about Microsoft Fabric. At this time, we need to write some prompts to extract data. So how do we do the Prompt project? Azure AI Studio's Playground can help. But here I introduce the Visual Studio Code extension using Semantic Kernel. It is more suitable for our test of completing the Prompt project
 
-![Notebook](../../imgs/lab1/skextinstall.png)
+![Notebook](../../../imgs/lab1/skextinstall.png)
 
 1. Create skills folder inside code folder
 
@@ -112,11 +112,11 @@ Before this step, we have completed the download and data relationship about Mic
 
 In Semantic Kernel, different Prompts are called Skills, and we can invoke the operations of Prompts by calling different [Skills]( https://github.com/microsoft/semantic-kernel/blob/main/docs/SKILLS.md ). A skill refers to a domain of expertise made available to the kernel as a single function, or as a group of functions related to the skill. The design of SK skills has prioritized maximum flexibility for the developer to be both lightweight and extensible.
 
-![Notebook](../../imgs/lab1/skskills.png)
+![Notebook](../../../imgs/lab1/skskills.png)
 
 The prompt and parameter settings of each skill are placed in the folder of each specific skill. The file corresponding to the prompt is skprompt.txt, and the file for parameter settings is config.json.
 
-![Notebook](../../imgs/lab1/promptset.png)
+![Notebook](../../../imgs/lab1/promptset.png)
 
 Let Prompt extract the content of markdown, which is actually the same as human thinking. According to the above content and understanding, we get the following Prompt (skprompt.txt)
 
@@ -185,17 +185,17 @@ and parameter settings (config.json)
 4. Select the extension of Semantic Kernel, and log in your corresponding Azure account
 
 
-![Notebook](../../imgs/lab1/sk1.png)
+![Notebook](../../../imgs/lab1/sk1.png)
 
 Select the Azure OpenAI Endpoint corresponding to the subscription, as well as the model and method to test
 
 
-![Notebook](../../imgs/lab1/skrun.png)
+![Notebook](../../../imgs/lab1/skrun.png)
 
 Click Run，the inputbox will pop up
 
 
-![Notebook](../../imgs/lab1/skinput.png)
+![Notebook](../../../imgs/lab1/skinput.png)
 
 
 Input this text
@@ -211,7 +211,7 @@ Microsoft Fabric is an all-in-one analytics solution for enterprises that covers
 it will show the result in terminal
 
 
-![Notebook](../../imgs/lab1/skresult.png)
+![Notebook](../../../imgs/lab1/skresult.png)
 
 
 *Note:*  
@@ -249,9 +249,9 @@ docker run -p 6333:6333 qdrant/qdrant
 
 ## **🎬 Let's Start**
 
-![prototype](../../imgs/lab1/ptshow.png)
+![prototype](../../../imgs/lab1/ptshow.png)
 
-Please Click [notebook](../../code/lab1/prototype.ipynb)  to learn 
+Please Click [notebook](../../../code/lab1/prototype.ipynb)  to learn 
 
 
 ## **🔁 Continue**
