@@ -25,8 +25,72 @@ Azure Kubernetes Service (AKS) simplifies deploying a managed Kubernetes cluster
 
 2. Install Heml [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/)
 
-3. Apply Azure 
+3. Apply [Azure](https://azure.com/free)  or [Azure For Student](https://aka.ms/studentgetazure)
 
+
+***Let's Go***
+
+1. Clone GitHub Repo git clone https://github.com/Azure-Samples/qdrant-azure.git
+
+2. In Termianl 
+
+```bash
+   
+   az login
+
+   az account set --subscription "Your Subscription"
+
+   az group create --name "Azure Resource Group" --location "Azure Region"
+
+   az sshkey create --name "qdrantSSHKey" --resource-group "AIGroup"
+
+```
+
+3. Click go to [AKS](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2Fqdrant-azure%2Fmain%2FAzure-Kubernetes-Svc%2Faks-arm-deploy.json)
+
+4. Follow this to finish AKS settings
+
+![AKS](../../imgs/lab2/AKS.png)
+
+
+5. In Terminal
+
+
+```bash
+
+kubectl get nodes
+
+cd YourQdrantOnAzureFolder/Azure-Kubernetes-Svc
+
+helm install azqdrant-sk ./qdrant-on-azure --create-namespace
+
+```
+
+6. Check your Qdrant on Azure , In terminal
+
+
+```bash
+
+kubectl get services
+
+```
+
+![AKS](../../imgs/lab2/qdrant.png)
+
+7. The covered red part is the public address of our Qdrant on Azure. Congratulations, you have successfully deployed your Qdrant on Azure in the cloud. You can re-run the Notebook after modifying the Qdrant address connected to the Lab 1 Notebook Kernel
+
+
+```csharp
+
+IKernel kernel = Kernel.Builder
+            .WithAzureChatCompletionService("Your Deplpyment model name", "Azure OpenAI Endpoint", "Azure OpenAI Key")
+            .WithAzureTextEmbeddingGenerationService("Your Deplpyment model name", "Azure OpenAI Endpoint", "Azure OpenAI Key")
+            .WithQdrantMemoryStore("http://YourQdrantonAzureIP:6333", 1536)
+            .Build();
+
+```
+
+ 
 
 
 

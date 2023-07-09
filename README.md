@@ -68,6 +68,12 @@ How to import Microsoft Fabric documents based on Microsoft Learn into ChatGPT t
 **🧪 Lab 2 - Deploy to Cloud**
 
 
+⏰ *Hour :  60 min - 90 min*
+
+🔗 *Link :</u> Click [this link](./labs/lab2/README.md)*
+
+
+
 **🧪 Lab 3 - Using Power Virtual Agent**
 
 
