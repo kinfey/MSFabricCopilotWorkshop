@@ -11,7 +11,7 @@ In Copilot applications, we can fully integrate with cloud-native applications. 
 
 ![statck](../../imgs/intro/stack.png)
 
-## **☁️☁️ Deploy Qdrant in Azure Kubernetes Service**
+## **🛠️ Deploy Qdrant in Azure Kubernetes Service**
 
 ### **🌪️ What is Azure Kubernetes Service**
 
@@ -91,7 +91,7 @@ IKernel kernel = Kernel.Builder
 ```
 
 
-## **Azure Function**
+## **🛠️ Azure Function**
 
 Azure Functions is a serverless solution that allows you to write less code, maintain less infrastructure, and save on costs. Instead of worrying about deploying and maintaining servers, the cloud infrastructure provides all the up-to-date resources needed to keep your applications running.
 
