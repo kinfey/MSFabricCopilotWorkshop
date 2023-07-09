@@ -134,6 +134,42 @@ func host start
 ![Run1](../../imgs/lab2/run1.png)
 
 
+5. In Azure Portal create Function App
+
+
+![func](../../imgs/lab2/func.png)
+
+6. Go to your Azure Function ， confirm your Configuration 
+
+
+![func1](../../imgs/lab2/func1.png)
+
+7. In Your GitHub Codespaces , go to terminal 
+
+
+```bash
+
+cd ./code/lab2/MSFabricBots/MSFabricBots.Funcs
+
+func azure functionapp publish lukaoaifunc --csharp
+
+
+```
+
+![func2](../../imgs/lab2/func2.png)
+
+8. Check it in your GitHub Codespaces Thunder Client Extension
+
+
+![run2](../../imgs/lab2/run2.png)
+
+
+
+
+
+
+
+
 
 
 
