@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "✅ to ☁️ Azure Functions",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "call-azure-func-backend",
+            "postDebugTask": "call-azure-func-backend"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "🤖🤖 Debug Your Copilot Apps",
+            "configurations": [
+                "✅ to ☁️ Azure Functions"
+            ],
+            "presentation": {
+                "hidden": false,
+                "group": "",
+                "order": 1
+            }
+        }
+    ]
+}

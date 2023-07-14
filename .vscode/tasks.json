@@ -1,0 +1,48 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build azure function",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/code/lab2/MSFabricBots/MSFabricBots.Funcs/MSFabricBots_Funcs.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "publish  azure function",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/code/lab2/MSFabricBots/MSFabricBots.Funcs/MSFabricBots_Funcs.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "watch azure function",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "run",
+                "--project",
+                "${workspaceFolder}/code/lab2/MSFabricBots/MSFabricBots.Funcs/MSFabricBots_Funcs.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "call-azure-func-backend",
+            "type": "shell",
+            "command": "cd ${workspaceFolder}/code/lab2/MSFabricBots/MSFabricBots.Funcs && func host start --csharp",
+            "dependsOn": "build azure function",
+        }
+
+    ]
+}
