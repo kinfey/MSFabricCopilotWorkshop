@@ -1,0 +1,12 @@
+{
+    "name": "swa-blazorandfunc-demo",
+    "version": "1.0.0",
+    "scripts": {
+      "start": "swa start http://localhost:5131 --api-location http://localhost:7071"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "main": "index.js",
+    "description": ""
+  }

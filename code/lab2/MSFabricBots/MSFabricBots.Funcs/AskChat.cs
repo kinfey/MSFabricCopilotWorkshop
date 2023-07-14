@@ -45,7 +45,7 @@ namespace MSFabricBots.Funcs
 
             var answers = kernel.AskSkill(query.questionText);
 
-            // Console.WriteLine(query.questionText);
+            Console.WriteLine(query.questionText);
 
             
             var response = req.CreateResponse(HttpStatusCode.OK);
@@ -54,8 +54,8 @@ namespace MSFabricBots.Funcs
             await foreach(var item in answers)
             {
                 var result =  kernel.SummarySkill(item.Metadata.Text);
-                // Console.WriteLine(result.Result);
-                // Console.WriteLine(item.Metadata.Text + " : " + item.Relevance);
+                Console.WriteLine(result.Result);
+                Console.WriteLine(item.Metadata.Text + " : " + item.Relevance);
                 response.WriteString(result.Result.ToString());
             } 
 

@@ -40,8 +40,55 @@
         {
             "label": "call-azure-func-backend",
             "type": "shell",
-            "command": "cd ${workspaceFolder}/code/lab2/MSFabricBots/MSFabricBots.Funcs && func host start --csharp",
+            "command": "cd ${workspaceFolder}/code/lab2/MSFabricBots/MSFabricBots.Funcs && func host start --dotnet-isolated",
             "dependsOn": "build azure function",
+        },
+        {
+            "label": "build blazor frontend",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/code/lab2/MSFabricBots/MSFabricBots.Copilots/MSFabricBots.Copilots.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "publish blazor frontend",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/code/lab2/MSFabricBots/MSFabricBots.Copilots/MSFabricBots.Copilots.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "watch blazor frontend",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "run",
+                "--project",
+                "${workspaceFolder}/code/lab2/MSFabricBots/MSFabricBots.Copilots/MSFabricBots.Copilots.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "call-blazor-frontend",
+            "type": "shell",
+            "command": "cd ${workspaceFolder}/code/lab2/MSFabricBots/MSFabricBots.Copilots && dotnet run",
+            "dependsOn": "build blazor frontend",
+        },
+        {
+            "label": "run-apps",
+            "type": "shell",
+            "command": "cd ${workspaceFolder}/code/lab2/MSFabricBots && npm start"
         }
 
     ]

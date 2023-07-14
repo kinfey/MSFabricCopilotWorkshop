@@ -34,10 +34,11 @@ namespace MSFabricBots.Copilots
 
             var httpClient = new HttpClient();
 
-            Console.WriteLine(httpClient.BaseAddress);
+            Console.WriteLine("aaaaa" + httpClient.BaseAddress);
 
+            var uriBuilder = new UriBuilder(httpClient.BaseAddress);
+            // uriBuilder.Path = "/api/AIOnnxHttpTrigger";
 
-            var uriBuilder = new UriBuilder("https://localhost:7071");
             uriBuilder.Path = "/api/AskChat";
 
 

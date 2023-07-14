@@ -1,4 +1,11 @@
 ﻿@page "/"
+@using System
+@using System.Net.Http
+@using System.Net.Http.Headers
+@using System.Threading.Tasks
+@using System.Web
+@using System.Text.Json
+@inject HttpClient _httpClient;
 
 
 <div id="box">
@@ -196,7 +203,36 @@
 
             qaprompt += "Q:" + prompt + "\n A:";
 
-            answer = await openAI.GetAnswer(prompt);
+            var qprompt = new Question { questionText = prompt };
+
+            var jsonObj = JsonSerializer.Serialize(qprompt);
+
+
+
+            Console.WriteLine("aaaaa" + _httpClient.BaseAddress);
+
+            var uriBuilder = new UriBuilder(_httpClient.BaseAddress);
+            // uriBuilder.Path = "/api/AIOnnxHttpTrigger";
+
+            uriBuilder.Path = "/api/AskChat";
+
+
+
+            var request = new HttpRequestMessage()
+            {
+                Method = HttpMethod.Post,
+                RequestUri = new System.Uri(uriBuilder.ToString()),
+                Content = new StringContent(jsonObj, System.Text.Encoding.UTF8, "application/json")
+            };
+
+
+
+            var response = await _httpClient.SendAsync(request);
+
+            var responseContent = await response.Content.ReadAsStringAsync();
+
+
+            var answer = responseContent;
 
 
             StateHasChanged();

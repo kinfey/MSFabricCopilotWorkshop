@@ -45,7 +45,7 @@ public class KernelSettings
 
     public IAsyncEnumerable<Microsoft.SemanticKernel.Memory.MemoryQueryResult> AskSkill(string questionText)
     {
-        var searchResults =  kernel.Memory.SearchAsync(this.azureOpenAIConfiguration.memoryCollectionName, questionText, limit: 1, minRelevanceScore: 0.8);
+        var searchResults =  kernel.Memory.SearchAsync(this.azureOpenAIConfiguration.memoryCollectionName, questionText, limit: 1, minRelevanceScore: 0.7);
         return searchResults;
     } 
 

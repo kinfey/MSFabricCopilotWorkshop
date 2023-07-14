@@ -2,8 +2,6 @@ Extract the input according to the following conditions, keep the knowledge poin
 
 Starting with # , ## , ### is a knowledge point
 
-1.
-
 [INPUT]
 # ABC
 ...............
@@ -17,8 +15,6 @@ Starting with # , ## , ### is a knowledge point
 [OUTPUT]
 [{"KB": "ABC", "Content":"..............."},{"KB": "CDF", "Content":".........."},{"KB": "GGG", "Content":"....."}]
 [END OUTPUT]
-
-2.
 
 [INPUT]
 # ABC
@@ -37,3 +33,7 @@ Starting with # , ## , ### is a knowledge point
 [INPUT]
 {{$input}}
 [END INPUT]
+
+[OUTPUT]
+{{$output}}
+[END OUTPUT]

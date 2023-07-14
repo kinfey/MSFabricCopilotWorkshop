@@ -2,18 +2,35 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "✅ to ☁️ Azure Functions",
+            "name": "🛠️ to ☁️ Azure Functions",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "call-azure-func-backend",
-            "postDebugTask": "call-azure-func-backend"
+            "program": "${workspaceFolder}/code/lab2/MSFabricBots/MSFabricBots.Funcs/bin/Debug/net7.0/MSFabricBots_Funcs.dll",
+            "preLaunchTask": "call-azure-func-backend"
+        },
+        {
+            "name": "🛠️ to 😈 Blazor",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/code/lab2/MSFabricBots/MSFabricBots.Copilots/bin/Debug/net7.0/MSFabricBots.Copilots.dll",
+            "preLaunchTask": "call-blazor-frontend"
+        },
+        {
+            "name": "🛠️ Run",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/code/lab2/MSFabricBots/",
+            "console": "integratedTerminal",
+            "preLaunchTask": "run-apps"
         }
     ],
     "compounds": [
         {
-            "name": "🤖🤖 Debug Your Copilot Apps",
+            "name": "🤖🤖 Run Your Copilot Apps",
             "configurations": [
-                "✅ to ☁️ Azure Functions"
+                "🛠️ to ☁️ Azure Functions",
+                "🛠️ to 😈 Blazor",
+                "🛠️ Run"
             ],
             "presentation": {
                 "hidden": false,
