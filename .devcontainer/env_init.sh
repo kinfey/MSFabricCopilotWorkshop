@@ -1,13 +1,19 @@
 # Install Qdrant
 docker pull qdrant/qdrant
 
+
 # Install NodeJS
-curl -sL https://deb.nodesource.com/setup_16.x | sudo bash -
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
 
-sudo apt update
+source ~/.bashrc
 
-sudo apt -y install nodejs
+nvm install 16.14.0
+
+nvm use 16.14.0
+
 
 # Install SWA CLI
 npm install -g @azure/static-web-apps-cli
+
+
 
