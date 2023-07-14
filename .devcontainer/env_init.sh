@@ -1,14 +1,9 @@
 # Install Qdrant
 docker pull qdrant/qdrant
 
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
 
-# Install NodeJS
-curl -sL https://deb.nodesource.com/setup_16.x | sudo bash -
-
-sudo apt -y install nodejs
-
-# Install SWA CLI
-npm install -g @azure/static-web-apps-cli
 
 
 
