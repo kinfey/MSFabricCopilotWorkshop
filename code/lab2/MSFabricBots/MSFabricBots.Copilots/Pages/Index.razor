@@ -1,0 +1,235 @@
+﻿@page "/"
+
+
+<div id="box">
+    <div>
+        <h1 id="title">Welcome to Learn Microsoft Fabric</h1>
+    </div>
+    <div id="chatcontainer">
+
+        @foreach (var item in messages)
+        {
+
+            @if (item.Role == "me")
+            {
+                <div class="human">
+                    <h4>Me</h4>
+                    <div>
+                        <p>
+                            @item.Prompt
+                        </p>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="bot">
+                    <h4>Bot</h4>
+                    <div>
+                        <p>
+                            @if (item.Prompt != null)
+                            {
+                                @((MarkupString)item.Prompt)
+                            }
+                        </p>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+
+    @if (!Processing)
+    {
+        <div id="text-input">
+            <textarea placeholder="Ask Your Question about Microsoft Fabric" @bind="prompt"></textarea>
+            <button id="answer" @onclick="AnswerGPT">Ask</button>
+        </div>
+    }
+    else
+    {
+        <br>
+        <h5>Waiting...</h5>
+    }
+</div>
+<style>
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+    }
+
+    #box {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #chatcontainer {
+        flex: 1;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .human {
+        display: flex;
+        flex-flow: row-reverse;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: right;
+    }
+
+        .human h4 {
+            padding: 0;
+            margin: 0 1em 0 0;
+        }
+
+        .human div {
+            flex: 1;
+            display: flex;
+            justify-content: right;
+        }
+
+            .human div p {
+                box-sizing: border-box;
+                max-width: 80%;
+                min-width: 20em;
+                padding: 1em;
+                margin: 1em;
+                border-radius: 5px;
+                background-color: #00a9f2;
+                color: white;
+                text-align: right;
+            }
+
+    .bot {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: left;
+    }
+
+        .bot h4 {
+            padding: 0;
+            margin: 0 0 0 1em;
+        }
+
+        .bot div {
+            flex: 1;
+            display: flex;
+        }
+
+            .bot div p {
+                box-sizing: border-box;
+                max-width: 80%;
+                min-width: 20em;
+                padding: 1em;
+                margin: 1em;
+                border-radius: 5px;
+                background-color: #12bc6d;
+                color: white;
+            }
+
+    #text-input {
+        background-color: beige;
+        padding: 1em;
+    }
+
+        #text-input textarea {
+            display: block;
+            box-sizing: border-box;
+            width: 100%;
+            min-width: 100%;
+            max-width: 100%;
+            min-height: 3em;
+            max-height: 10em;
+            border: dashed #999 1px;
+            border-radius: 5px;
+            padding: .5em;
+            background-color: #fefefe;
+        }
+
+    #answer {
+        padding: .5em 1em;
+        border: 0;
+        border-radius: 5px;
+        color: white;
+        background-color: #1d6ec0;
+        margin: 4px 4px 4px 0;
+        cursor: pointer;
+    }
+
+    #clear {
+        padding: .5em 1em;
+        border: 0;
+        border-radius: 5px;
+        color: white;
+        background-color: #03b9d2;
+        cursor: pointer;
+    }
+</style>
+
+
+
+@code {
+
+    
+    AskFabricSDK openAI = new AskFabricSDK();
+
+    string answer;
+    string question;
+    string prompt = "";
+    string qaprompt = "";
+
+    bool Processing = false;
+    string ErrorMessage = "";
+
+
+    IList<Messages> messages = new List<Messages>(); 
+
+    async Task AnswerGPT()
+    {
+        try
+        {
+            Processing = true;
+
+
+            qaprompt += "Q:" + prompt + "\n A:";
+
+            answer = await openAI.GetAnswer(prompt);
+
+
+            StateHasChanged();
+
+
+
+            messages.Add(new Messages
+            {
+                Role = "me",
+                Prompt = prompt
+            });
+
+            messages.Add(new Messages
+            {
+                Role = "Bot",
+                Prompt = answer
+            }); ;
+
+
+            qaprompt += answer + "\n ";
+
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = ex.Message;
+        }
+        finally
+        {
+            prompt = "";
+
+            Processing = false;
+
+            StateHasChanged();
+        } 
+    }
+}
