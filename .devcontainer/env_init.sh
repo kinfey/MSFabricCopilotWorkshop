@@ -9,5 +9,3 @@ npm install -g @azure/static-web-apps-cli
 # Install Qdrant
 docker pull qdrant/qdrant
 
-# get Qdrant
-docker pull qdrant/qdrant
