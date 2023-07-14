@@ -3,13 +3,11 @@ docker pull qdrant/qdrant
 
 
 # Install NodeJS
-curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
+curl -sL https://deb.nodesource.com/setup_16.x | sudo bash -
 
-source ~/.bashrc
+sudo apt update
 
-nvm install 16.14.0
-
-nvm use 16.14.0
+sudo apt -y install nodejs
 
 
 # Install SWA CLI
