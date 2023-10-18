@@ -6,53 +6,65 @@ using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
-using Microsoft.SemanticKernel;
-using Microsoft.SemanticKernel.SemanticFunctions;
+
+
 using Microsoft.SemanticKernel.Orchestration;
-using Microsoft.SemanticKernel.SkillDefinition;
-using Microsoft.SemanticKernel.Text;
+
+
+using Microsoft.SemanticKernel;
+using Microsoft.SemanticKernel.Memory;
 using Microsoft.SemanticKernel.Connectors.Memory.Qdrant;
+using Microsoft.SemanticKernel.Plugins.Memory;
+using Microsoft.SemanticKernel.Connectors.AI.OpenAI.TextEmbedding;
 
 namespace MSFabricBots.Kernel;
 
 public class KernelSettings
 {
     IKernel kernel;
+
+    ISemanticTextMemory skmemory;
     IConfigurationRoot configuration;
 
-    IDictionary<string, ISKFunction> qa_skill;
+    IDictionary<string, ISKFunction> qa_plugin;
 
-    IDictionary<string, ISKFunction> content_skill;
+    IDictionary<string, ISKFunction> content_plugin;
 
-    string skillsDirectory;
+    string pluginDirectory;
 
     AzureOpenAIConfiguration azureOpenAIConfiguration;
 
-    public KernelSettings(IConfigurationRoot configuration,string skillsDirectory)
+    public KernelSettings(IConfigurationRoot configuration,string pluginDirectory)
     {
         this.configuration = configuration;
-        this.skillsDirectory = skillsDirectory;
+        this.pluginDirectory = pluginDirectory;
         this.azureOpenAIConfiguration = this.configuration.GetSection("AzureOpenAI").Get<AzureOpenAIConfiguration>();
         this.kernel = Microsoft.SemanticKernel.Kernel.Builder
                 .WithAzureChatCompletionService(azureOpenAIConfiguration.deployName, azureOpenAIConfiguration.endpoint, azureOpenAIConfiguration.apiKey)
-                .WithAzureTextEmbeddingGenerationService(azureOpenAIConfiguration.embeddingDeployName, azureOpenAIConfiguration.endpoint, azureOpenAIConfiguration.apiKey)
-                .WithQdrantMemoryStore(azureOpenAIConfiguration.vectorDBEndpoint, 1536)
                 .Build();
 
-        this.content_skill = kernel.ImportSemanticSkillFromDirectory(this.skillsDirectory,"ReadSkill");
-        this.qa_skill = kernel.ImportSemanticSkillFromDirectory(this.skillsDirectory,"QASkill");
+        var qdrantMemoryBuilder = new MemoryBuilder();
+
+        var textEmbedding = new AzureTextEmbeddingGeneration(azureOpenAIConfiguration.embeddingDeployName, azureOpenAIConfiguration.endpoint, azureOpenAIConfiguration.apiKey);
+        qdrantMemoryBuilder.WithTextEmbeddingGeneration(textEmbedding);
+        qdrantMemoryBuilder.WithQdrantMemoryStore(azureOpenAIConfiguration.vectorDBEndpoint, 1536);
+
+        this.skmemory = qdrantMemoryBuilder.Build();
+
+        this.content_plugin = kernel.ImportSemanticFunctionsFromDirectory(this.pluginDirectory,"ReadPlugin");
+        this.qa_plugin = kernel.ImportSemanticFunctionsFromDirectory(this.pluginDirectory,"QAPlugin");
     }
 
-    public IAsyncEnumerable<Microsoft.SemanticKernel.Memory.MemoryQueryResult> AskSkill(string questionText)
+    public IAsyncEnumerable<Microsoft.SemanticKernel.Memory.MemoryQueryResult> AskPlugin(string questionText)
     {
-        var searchResults =  kernel.Memory.SearchAsync(this.azureOpenAIConfiguration.memoryCollectionName, questionText, limit: 1, minRelevanceScore: 0.7);
+        var searchResults =   this.skmemory.SearchAsync(this.azureOpenAIConfiguration.memoryCollectionName, questionText, limit: 1, minRelevanceScore: 0.7);
         return searchResults;
     } 
 
     
-    public async Task<SKContext> SummarySkill(string answer)
+    public async Task<KernelResult> SummaryPlugin(string answer)
     {
-        var result = await this.kernel.RunAsync(answer, this.qa_skill["KB"]);
+        var result = await this.kernel.RunAsync(answer, this.qa_plugin["KB"]);
 
         return result;
     } 

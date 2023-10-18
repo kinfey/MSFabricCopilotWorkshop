@@ -29,7 +29,7 @@ namespace MSFabricBots.Funcs
             configuration = new ConfigurationBuilder().AddJsonFile(path: "appsettings.json", optional: false, reloadOnChange: true).Build() ;
 
             
-            var skillsDirectory =  System.IO.Directory.GetCurrentDirectory() + "/Skills";
+            var skillsDirectory =  System.IO.Directory.GetCurrentDirectory() + "/Plugins";
 
             kernel= new(configuration,skillsDirectory);
 
@@ -43,7 +43,7 @@ namespace MSFabricBots.Funcs
             
             var query = JsonSerializer.Deserialize<Questions>(req.Body);
 
-            var answers = kernel.AskSkill(query.questionText);
+            var answers =  kernel.AskPlugin(query.questionText);
 
             Console.WriteLine(query.questionText);
 
@@ -53,7 +53,7 @@ namespace MSFabricBots.Funcs
 
             await foreach(var item in answers)
             {
-                var result =  kernel.SummarySkill(item.Metadata.Text);
+                var result =  kernel.SummaryPlugin(item.Metadata.Text);
                 Console.WriteLine(result.Result);
                 Console.WriteLine(item.Metadata.Text + " : " + item.Relevance);
                 response.WriteString(result.Result.ToString());
