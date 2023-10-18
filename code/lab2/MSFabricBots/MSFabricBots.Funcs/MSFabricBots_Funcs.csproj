@@ -10,7 +10,7 @@
     <PackageReference Include="Microsoft.Azure.Functions.Worker" Version="1.8.0" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Http" Version="3.0.13" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker.Sdk" Version="1.7.0" />
-    <PackageReference Include="Microsoft.SemanticKernel" Version="0.17.230711.7-preview" />
+    <PackageReference Include="Microsoft.SemanticKernel" Version="1.0.0-beta2" />
   </ItemGroup>
   <ItemGroup>
     <None Update="host.json">
@@ -23,16 +23,16 @@
     <None Update="appsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update=".\Skills\ReadSkill\KB\skprompt.txt">
+    <None Update=".\Plugins\ReadPlugin\KB\skprompt.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update=".\Skills\ReadSkill\KB\config.json">
+    <None Update=".\Plugins\ReadPlugin\KB\config.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update=".\Skills\QASkill\KB\skprompt.txt">
+    <None Update=".\Plugins\QAPlugin\KB\skprompt.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update=".\Skills\QASkill\KB\config.json">
+    <None Update=".\Plugins\QAPlugin\KB\config.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
