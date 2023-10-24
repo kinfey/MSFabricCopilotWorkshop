@@ -12,3 +12,5 @@ bld/
 [Oo]bj/
 [Pp]ublish/
 MSFabricBots.Copilot/
+
+*.sln
