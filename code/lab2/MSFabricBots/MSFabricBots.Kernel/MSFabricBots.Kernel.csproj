@@ -12,8 +12,8 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="7.0.0" />
-    <PackageReference Include="Microsoft.SemanticKernel" Version="1.0.0-beta3" />
-    <PackageReference Include="Microsoft.SemanticKernel.Connectors.Memory.Qdrant" Version="1.0.0-beta3" />
+    <PackageReference Include="Microsoft.SemanticKernel" Version="1.0.0-beta6" />
+    <PackageReference Include="Microsoft.SemanticKernel.Connectors.Memory.Qdrant" Version="1.0.0-beta6" />
   </ItemGroup>
 
 </Project>

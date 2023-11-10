@@ -39,13 +39,13 @@ public class KernelSettings
         this.configuration = configuration;
         this.pluginDirectory = pluginDirectory;
         this.azureOpenAIConfiguration = this.configuration.GetSection("AzureOpenAI").Get<AzureOpenAIConfiguration>();
-        this.kernel = Microsoft.SemanticKernel.Kernel.Builder
-                .WithAzureChatCompletionService(azureOpenAIConfiguration.deployName, azureOpenAIConfiguration.endpoint, azureOpenAIConfiguration.apiKey)
+        this.kernel = new Microsoft.SemanticKernel.KernelBuilder()
+                .WithAzureOpenAIChatCompletionService(azureOpenAIConfiguration.deployName, azureOpenAIConfiguration.endpoint, azureOpenAIConfiguration.apiKey)
                 .Build();
 
         var qdrantMemoryBuilder = new MemoryBuilder();
 
-        var textEmbedding = new AzureTextEmbeddingGeneration(azureOpenAIConfiguration.embeddingDeployName, azureOpenAIConfiguration.endpoint, azureOpenAIConfiguration.apiKey);
+        var textEmbedding = new AzureOpenAITextEmbeddingGeneration(azureOpenAIConfiguration.embeddingDeployName, azureOpenAIConfiguration.endpoint, azureOpenAIConfiguration.apiKey);
         qdrantMemoryBuilder.WithTextEmbeddingGeneration(textEmbedding);
         qdrantMemoryBuilder.WithQdrantMemoryStore(azureOpenAIConfiguration.vectorDBEndpoint, 1536);
 
