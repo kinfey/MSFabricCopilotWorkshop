@@ -27,7 +27,8 @@
 				"rangav.vscode-thunder-client",
 				"ms-azuretools.vscode-azurefunctions",
 				"ms-dotnettools.dotnet-interactive-vscode",
-				"ms-semantic-kernel.semantic-kernel"
+				"ms-semantic-kernel.semantic-kernel",
+				"ms-dotnettools.csdevkit"
 			]
 		}
 	}
