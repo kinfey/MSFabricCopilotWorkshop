@@ -1,8 +1,8 @@
 {
   "profiles": {
-    "MSFabricBots_Funcs": {
+    "MSFabricBots_Serverless": {
       "commandName": "Project",
-      "commandLineArgs": "--port 7255",
+      "commandLineArgs": "--port 7002",
       "launchBrowser": false
     }
   }

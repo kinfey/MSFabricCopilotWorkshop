@@ -4,8 +4,10 @@ public class AzureOpenAIConfiguration
 {
         public string deployName {get;set;}
         public string endpoint {get;set;}
+        public string modelID {get;set;}        
         public string apiKey {get;set;}
         public string embeddingDeployName {get;set;}
+        public string embeddingID {get;set;}    
         public string vectorDBEndpoint {get;set;}
         public string memoryCollectionName {get;set;}
 

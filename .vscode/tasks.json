@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/code/lab2/MSFabricBots/MSFabricBots.Funcs/MSFabricBots_Funcs.csproj",
+                "${workspaceFolder}/code/lab2/MSFabricBots/MSFabricBots.Serverless/MSFabricBots_Serverless.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/code/lab2/MSFabricBots/MSFabricBots.Funcs/MSFabricBots_Funcs.csproj",
+                "${workspaceFolder}/code/lab2/MSFabricBots/MSFabricBots.Serverless/MSFabricBots_Serverless.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,14 +33,14 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/code/lab2/MSFabricBots/MSFabricBots.Funcs/MSFabricBots_Funcs.csproj"
+                "${workspaceFolder}/code/lab2/MSFabricBots/MSFabricBots.Serverless/MSFabricBots_Serverless.csproj"
             ],
             "problemMatcher": "$msCompile"
         },
         {
             "label": "call-azure-func-backend",
             "type": "shell",
-            "command": "cd ${workspaceFolder}/code/lab2/MSFabricBots/MSFabricBots.Funcs && func host start --dotnet-isolated",
+            "command": "cd ${workspaceFolder}/code/lab2/MSFabricBots/MSFabricBots.Serverless && func host start --dotnet-isolated",
             "dependsOn": "build azure function",
         },
         {

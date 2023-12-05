@@ -14,7 +14,7 @@ using Microsoft.Extensions.Configuration;
 
 using MSFabricBots.Kernel;
 
-namespace MSFabricBots.Funcs
+namespace MSFabricBots.Serverless
 {
     public class AskChat
     {
@@ -29,7 +29,7 @@ namespace MSFabricBots.Funcs
             configuration = new ConfigurationBuilder().AddJsonFile(path: "appsettings.json", optional: false, reloadOnChange: true).Build() ;
 
             
-            var skillsDirectory =  System.IO.Directory.GetCurrentDirectory() + "/Plugins";
+            var skillsDirectory =   "./Plugins";
 
             kernel= new(configuration,skillsDirectory);
 
@@ -45,7 +45,7 @@ namespace MSFabricBots.Funcs
 
             var answers =  kernel.AskPlugin(query.questionText);
 
-            Console.WriteLine(query.questionText);
+            // Console.WriteLine(query.questionText);
 
             
             var response = req.CreateResponse(HttpStatusCode.OK);
@@ -53,11 +53,13 @@ namespace MSFabricBots.Funcs
 
             await foreach(var item in answers)
             {
-                var result =  kernel.SummaryPlugin(item.Metadata.Text);
-                Console.WriteLine(result.Result);
-                Console.WriteLine(item.Metadata.Text + " : " + item.Relevance);
-                response.WriteString(result.Result.ToString());
+                // var result = await kernel.SummaryPlugin(item.Metadata.Text);
+                //  Console.WriteLine(result);
+                // Console.WriteLine(item.Metadata.Text + " : " + item.Relevance);
+                response.WriteString(item.Metadata.Text);
             } 
+
+            // response.WriteString(query.questionText.ToString());
 
             return response;
         }

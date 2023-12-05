@@ -1,4 +1,4 @@
-namespace MSFabricBots.Funcs;
+namespace MSFabricBots.Serverless;
 
 public class Questions
 {

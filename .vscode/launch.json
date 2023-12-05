@@ -5,7 +5,7 @@
             "name": "🛠️ to ☁️ Azure Functions",
             "type": "coreclr",
             "request": "launch",
-            "program": "${workspaceFolder}/code/lab2/MSFabricBots/MSFabricBots.Funcs/bin/Debug/net7.0/MSFabricBots_Funcs.dll",
+            "program": "${workspaceFolder}/code/lab2/MSFabricBots/MSFabricBots.Serverless/bin/Debug/net7.0/MSFabricBots_Serverless.dll",
             "preLaunchTask": "call-azure-func-backend"
         },
         {
