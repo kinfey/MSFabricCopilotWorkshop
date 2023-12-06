@@ -89,7 +89,7 @@ public class KernelSettings
         }
         else
         {
-            var result = await this.kernel.InvokeAsync(this.qa_plugin["KB"],answer);
+            var result = await this.kernel.InvokeAsync(this.qa_plugin["KB"],new(answer));
 
             return result.ToString();
         }
