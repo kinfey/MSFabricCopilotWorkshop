@@ -92,7 +92,7 @@ Build Copilot's front-end interaction with low-code Power Virtual Agent and Powe
 
 ## **🔥 Prerequirement**
 
-1. **.NET 7+** https://dotnet.microsoft.com/en-us/
+1. **.NET 8** https://dotnet.microsoft.com/en-us/
    
 2. **Azure** 
 

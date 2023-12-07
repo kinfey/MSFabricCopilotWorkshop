@@ -90,7 +90,7 @@ Copilot 应用程序可以作为您日常工作中的辅助工具，解决不同
 
 ## **🔥 准备工作**
 
-1. **.NET 7+** https://dotnet.microsoft.com/en-us/
+1. **.NET 8** https://dotnet.microsoft.com/en-us/
    
 2. **Azure** 
 
