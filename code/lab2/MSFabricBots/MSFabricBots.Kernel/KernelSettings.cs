@@ -53,7 +53,7 @@ public class KernelSettings
         this.pluginDirectory = pluginDirectory;
         this.azureOpenAIConfiguration = this.configuration.GetSection("AzureOpenAI").Get<AzureOpenAIConfiguration>();
         this.kernel = new Microsoft.SemanticKernel.KernelBuilder()
-                .WithAzureOpenAIChatCompletion(azureOpenAIConfiguration.deployName, azureOpenAIConfiguration.modelID, azureOpenAIConfiguration.modelID ,azureOpenAIConfiguration.endpoint, azureOpenAIConfiguration.apiKey)
+                .AddAzureOpenAIChatCompletion(azureOpenAIConfiguration.deployName, azureOpenAIConfiguration.modelID, azureOpenAIConfiguration.modelID ,azureOpenAIConfiguration.endpoint, azureOpenAIConfiguration.apiKey)
                 .Build();
 
         var qdrantMemoryBuilder = new MemoryBuilder();

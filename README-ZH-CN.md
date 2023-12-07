@@ -1,6 +1,6 @@
 # **🫵 创建 Microsoft Fabric Copilot 应用 Workshop**
 
-***该列子创建基于 Semantic-Kernel RC.2***
+***该列子创建基于 Semantic-Kernel RC.3***
 
 ## **📡 什么是 Microsoft Fabric ?**
 
