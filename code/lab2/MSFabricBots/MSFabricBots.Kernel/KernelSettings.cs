@@ -8,20 +8,11 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 
 
-// using Microsoft.SemanticKernel.Orchestration;
-
-
-// using Microsoft.SemanticKernel;
-// using Microsoft.SemanticKernel.Memory;
-// using Microsoft.SemanticKernel.Connectors.Memory.Qdrant;
-// using Microsoft.SemanticKernel.Plugins.Memory;
-// using Microsoft.SemanticKernel.Connectors.AI.OpenAI.TextEmbedding;
-
 using Microsoft.SemanticKernel;
+using Microsoft.SemanticKernel.Embeddings;
 using Microsoft.SemanticKernel.Memory;
-using Microsoft.SemanticKernel.Connectors.Memory.Qdrant;
-using Microsoft.SemanticKernel.Plugins.Memory;
-using Microsoft.SemanticKernel.Connectors.AI.OpenAI.TextEmbedding;
+using Microsoft.SemanticKernel.Connectors.Qdrant;
+using Microsoft.SemanticKernel.Connectors.OpenAI;
 
 namespace MSFabricBots.Kernel;
 
@@ -33,9 +24,9 @@ public class KernelSettings
     ISemanticTextMemory skmemory;
     IConfigurationRoot configuration;
 
-    IKernelPlugin qa_plugin;
+    KernelPlugin qa_plugin;
 
-    IKernelPlugin content_plugin;
+    KernelPlugin content_plugin;
 
     string pluginDirectory;
 
@@ -52,13 +43,15 @@ public class KernelSettings
         this.configuration = configuration;
         this.pluginDirectory = pluginDirectory;
         this.azureOpenAIConfiguration = this.configuration.GetSection("AzureOpenAI").Get<AzureOpenAIConfiguration>();
-        this.kernel = new Microsoft.SemanticKernel.KernelBuilder()
-                .AddAzureOpenAIChatCompletion(azureOpenAIConfiguration.deployName, azureOpenAIConfiguration.modelID, azureOpenAIConfiguration.modelID ,azureOpenAIConfiguration.endpoint, azureOpenAIConfiguration.apiKey)
-                .Build();
+
+        this.kernel = Microsoft.SemanticKernel.Kernel.CreateBuilder()
+            .AddAzureOpenAIChatCompletion(azureOpenAIConfiguration.deployName, azureOpenAIConfiguration.endpoint, azureOpenAIConfiguration.apiKey)
+            .Build();
 
         var qdrantMemoryBuilder = new MemoryBuilder();
 
-        var textEmbedding = new AzureOpenAITextEmbeddingGeneration(azureOpenAIConfiguration.embeddingDeployName, azureOpenAIConfiguration.embeddingID, azureOpenAIConfiguration.endpoint, azureOpenAIConfiguration.apiKey);
+        var textEmbedding = new AzureOpenAITextEmbeddingGenerationService(azureOpenAIConfiguration.embeddingDeployName, azureOpenAIConfiguration.endpoint, azureOpenAIConfiguration.apiKey);
+
         qdrantMemoryBuilder.WithTextEmbeddingGeneration(textEmbedding);
         qdrantMemoryBuilder.WithQdrantMemoryStore(azureOpenAIConfiguration.vectorDBEndpoint, 1536);
 
@@ -89,7 +82,7 @@ public class KernelSettings
         }
         else
         {
-            var result = await this.kernel.InvokeAsync(this.qa_plugin["KB"],new(answer));
+            var result = await this.kernel.InvokeAsync(this.qa_plugin["KB"],new(){["input"] = answer});
 
             return result.ToString();
         }

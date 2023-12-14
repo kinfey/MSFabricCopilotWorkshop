@@ -29,7 +29,9 @@
 				"ms-azuretools.vscode-azurefunctions",
 				"ms-dotnettools.dotnet-interactive-vscode",
 				"ms-semantic-kernel.semantic-kernel",
-				"ms-dotnettools.csdevkit"
+				"ms-dotnettools.csdevkit",
+				"GitHub.copilot",
+				"GitHub.copilot-chat"
 			]
 		}
 	}
