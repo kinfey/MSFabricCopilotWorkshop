@@ -209,13 +209,10 @@
 
 
 
-            Console.WriteLine("aaaaa" + _httpClient.BaseAddress);
 
             var uriBuilder = new UriBuilder(_httpClient.BaseAddress);
-            // uriBuilder.Path = "/api/AIOnnxHttpTrigger";
 
             uriBuilder.Path = "/api/AskChat";
-
 
 
             var request = new HttpRequestMessage()

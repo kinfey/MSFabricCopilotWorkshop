@@ -38,8 +38,6 @@ namespace MSFabricBots.Serverless
         [Function("AskChat")]
         public async Task<HttpResponseData> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequestData req)
         {
-            // _logger.LogInformation("C# HTTP trigger function processed a request.");
-
             
             var query = JsonSerializer.Deserialize<Questions>(req.Body);
 
@@ -53,13 +51,9 @@ namespace MSFabricBots.Serverless
 
             await foreach(var item in answers)
             {
-                // var result = await kernel.SummaryPlugin(item.Metadata.Text);
-                //  Console.WriteLine(result);
-                // Console.WriteLine(item.Metadata.Text + " : " + item.Relevance);
                 response.WriteString(item.Metadata.Text);
             } 
 
-            // response.WriteString(query.questionText.ToString());
 
             return response;
         }
