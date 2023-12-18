@@ -31,7 +31,8 @@
 				"ms-semantic-kernel.semantic-kernel",
 				"ms-dotnettools.csdevkit",
 				"GitHub.copilot",
-				"GitHub.copilot-chat"
+				"GitHub.copilot-chat",
+				"Postman.postman-for-vscode"
 			]
 		}
 	}

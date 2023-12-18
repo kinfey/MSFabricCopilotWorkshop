@@ -1,6 +1,6 @@
 # **🫵 Building Microsoft Fabric Copilot App Workshop**
 
-***This sample build for Semantic-Kernel RC.4***
+***This sample build for Semantic-Kernel 1.0.1***
 
 ***如果你希望使用中文的内容, 请点击该[链接](./README-ZH-CN.md)***
 

@@ -34,26 +34,22 @@ namespace MSFabricBots.Copilots
 
             var httpClient = new HttpClient();
 
-            Console.WriteLine("aaaaa" + httpClient.BaseAddress);
-
             var uriBuilder = new UriBuilder(httpClient.BaseAddress);
-            // uriBuilder.Path = "/api/AIOnnxHttpTrigger";
 
             uriBuilder.Path = "/api/AskChat";
 
-
+            // create HttpRequestMessage , method POST , RequestUri = uriBuilder.Uri , Content = new StringContent(jsonObj, Encoding.UTF8, "application/json")
 
             var request = new HttpRequestMessage()
             {
                 Method = HttpMethod.Post,
-                RequestUri = new System.Uri(uriBuilder.ToString()),
-                Content = new StringContent(jsonObj, System.Text.Encoding.UTF8, "application/json")
+                RequestUri = uriBuilder.Uri,
+                Content = new StringContent(jsonObj, Encoding.UTF8, "application/json")
             };
-
-
+            
+            //generate response with httpClient.SendAsync(request)
 
             var response = await httpClient.SendAsync(request);
-
             var responseContent = await response.Content.ReadAsStringAsync();
 
             var answer = responseContent;

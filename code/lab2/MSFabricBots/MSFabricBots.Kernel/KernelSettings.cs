@@ -35,10 +35,10 @@ public class KernelSettings
     public KernelSettings(IConfigurationRoot configuration,string pluginDirectory)
     {
 
-        #pragma warning disable SKEXP0052
-        #pragma warning disable CS1061
+        #pragma warning disable SKEXP0003
         #pragma warning disable SKEXP0011
         #pragma warning disable SKEXP0026
+
 
         this.configuration = configuration;
         this.pluginDirectory = pluginDirectory;
@@ -58,16 +58,16 @@ public class KernelSettings
         this.skmemory = qdrantMemoryBuilder.Build();
 
         this.content_plugin = this.kernel.CreatePluginFromPromptDirectory(Path.Combine(this.pluginDirectory, "ReadPlugin"));
-        this.qa_plugin = this.kernel.CreatePluginFromPromptDirectory(Path.Combine(this.pluginDirectory, "QAPlugin"));//.ImportSemanticFunctionsFromDirectory(this.pluginDirectory,"QAPlugin");
+        this.qa_plugin = this.kernel.CreatePluginFromPromptDirectory(Path.Combine(this.pluginDirectory, "QAPlugin"));
     }
 
     public IAsyncEnumerable<Microsoft.SemanticKernel.Memory.MemoryQueryResult> AskPlugin(string questionText)
     {
 
-        #pragma warning disable SKEXP0052
-        #pragma warning disable CS1061
+        #pragma warning disable SKEXP0003
         #pragma warning disable SKEXP0011
         #pragma warning disable SKEXP0026
+
 
         var searchResults =   this.skmemory.SearchAsync(this.azureOpenAIConfiguration.memoryCollectionName, questionText, limit: 1, minRelevanceScore: 0.7);
         return searchResults;
